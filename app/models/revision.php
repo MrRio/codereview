@@ -3,6 +3,8 @@
 class Revision extends AppModel {
 	
 	var $belongsTo = array('Snippet');
-	var $hasMany = array('Comment');
-	
+	var $validate = array('hash' => 
+						     array('rule' => "isUnique",
+							  'message' => "This revision already exists")
+						 );
 }
