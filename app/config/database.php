@@ -5,10 +5,10 @@ class DATABASE_CONFIG {
 	var $default = array(
 		'driver' => 'mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'codereview',
+		'host' => '10.194.111.8',
+		'login' => 'user_5211d264',
+		'password' => 'FM8m&f5NTZkNV(',
+		'database' => 'db_5211d264',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
