@@ -17,7 +17,7 @@
 		if ($currentUser['Account']['id'] === $snippet['Account']['id']) {
 			?>
 			<h2>Add A Revision</h2>
-				<?php echo $form->create('Revision', array('url' => '/snippets/revision/'.$snippet['Snippet']['id'])); ?>
+				<?php echo $form->create('Revision', array('url' => '/snippets/revision/'.$snippet['Snippet']['id'],'inputDefaults' => array('div' => 'fullSizeForm') )); ?>
 					<?php echo $form->input('snippet_id', array('type' => 'hidden', 'value' => $snippet['Snippet']['id']))?>
 					<?php echo $form->input('code', array('type' => 'textarea'))?>
 				<?php echo $form->end('Add')?>
@@ -25,8 +25,8 @@
 		}
 	?>
 	
-<h2>Add A Revision</h2>	
-<?php echo $form->create('Comment', array('url' => '/snippets/view/' . $snippet['Snippet']['id']))?>
+<h2>Add A Comment</h2>	
+<?php echo $form->create('Comment', array('url' => '/snippets/view/' . $snippet['Snippet']['id'],'inputDefaults' => array('div' => 'fullSizeForm')))?>
 	<?php echo $form->input('snippet_id', array('type' => 'hidden', 'value' => $snippet['Snippet']['id']))?>
 	<?php echo $form->input('comment', array('type' => 'textarea'))?>
 <?php echo $form->end('Add')?>

@@ -21,6 +21,7 @@
 		<script>hljs.initHighlightingOnLoad();</script>
     <!-- Le styles -->
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $html->url('/css/global.css') ?>">
     <style type="text/css">
       body {
         padding-top: 60px;

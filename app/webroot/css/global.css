@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+
+.fullSizeForm textarea { width : 800px; }
+.fullSizeForm label { text-align : left; font-height: 18px;  }

@@ -67,7 +67,7 @@ class Curl extends AppModel
         'header' => CURLOPT_HEADER,
         'httpGet' => CURLOPT_HTTPGET,
         'httpProxyTunnel' => CURLOPT_HTTPPROXYTUNNEL,
-        'mute' => CURLOPT_MUTE,
+//        'mute' => CURLOPT_MUTE,
         'netRc' => CURLOPT_NETRC,
         'nobody' => CURLOPT_NOBODY,
         'noProgress' => CURLOPT_NOPROGRESS,
