@@ -65,7 +65,13 @@ class SnippetsController extends AppController {
 			$snippetData['Snippet']['username'] = $currentUser['Account']['username'];
 			if($this->Snippet->save($snippetData)) {
 				$snippet_id = $this->Snippet->getID();
-				$revision = array('Revision' => array('code' => $this->data['Revision']['code'], 'snippet_id' => $snippet_id, 'hash' => md5($this->data['Revision']['code']) ));
+				require_once ROOT . DS . APP_DIR . DS.'libs/hilight.php';				
+			    $code = str_replace("&", "&amp;", $this->data['Revision']['code']);
+			    $code = str_replace("<", "&lt;", $code);
+			    $code = str_replace(">", "&gt;", $code);
+			    $code = preg_replace("/^[ \\t\\r]*$/ms", "&nbsp;", $code);
+				$code = SyntaxHighlight($code,$this->data['Snippet']['language']);
+				$revision = array('Revision' => array('code' => $code, 'snippet_id' => $snippet_id, 'hash' => md5($this->data['Revision']['code']) ));
 				if(!$this->Snippet->Revision->save($revision)) {
 					$this->Session->setFlash('That code is already in our database!', 'error');
 				} else {

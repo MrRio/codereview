@@ -1,4 +1,17 @@
 @CHARSET "UTF-8";
 
 .fullSizeForm textarea { width : 800px; }
+.fullSizeForm input { width : 800px; }
 .fullSizeForm label { text-align : left; font-height: 18px;  }
+.keyword {
+    color: mediumblue;
+    }
+
+.comment {
+    color: green;
+    }
+
+.literal {
+    color: purple;
+    }
+

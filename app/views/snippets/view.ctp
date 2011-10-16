@@ -3,11 +3,10 @@
 			 <?php echo date("F j, Y, g:i a", strtotime($snippet['Snippet']['timestamp'])); ?></h2>
 
 <?php foreach($snippet['Revision'] as $revision) { ?>
-	<pre><?php $lines = explode(PHP_EOL, $revision['code']); 
+	<pre class="code"><?php $lines = explode(PHP_EOL, $revision['code']); 
 		foreach ($lines as  $number => $line) { 
 			$number++;
-			$line = htmlentities($line);
-			$line = str_replace(' ','&nbsp;', $line);
+			//$line = htmlentities($line);
 			$line = str_replace('\t','&nbsp;&nbsp;&nbsp;&nbsp;', $line);
 		?><em><?php echo $number; ?>.</em><span id="line-<?php echo $number; ?>"><?php echo $line; ?></span><?php } ?></pre>
 <?php } ?>
@@ -19,6 +18,7 @@
 			<h2>Add A Revision</h2>
 				<?php echo $form->create('Revision', array('url' => '/snippets/revision/'.$snippet['Snippet']['id'],'inputDefaults' => array('div' => 'fullSizeForm') )); ?>
 					<?php echo $form->input('snippet_id', array('type' => 'hidden', 'value' => $snippet['Snippet']['id']))?>
+					<?php echo $form->input('language', array('type' => 'hidden', 'value' => $snippet['Snippet']['language']))?>
 					<?php echo $form->input('code', array('type' => 'textarea'))?>
 				<?php echo $form->end('Add')?>
 			<?php
